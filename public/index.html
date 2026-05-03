@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes 3C — Venda Serviços no Instagram Enquanto Dorme</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --black: #080807;
+      --black2: #0f0e0d;
+      --white: #F2F0EA;
+      --orange: #D94F1E;
+      --orange2: #F26435;
+      --orange-dim: rgba(217, 79, 30, 0.08);
+      --orange-border: rgba(217, 79, 30, 0.25);
+      --gray: #5A5855;
+      --gray2: #9A9690;
+      --border: rgba(242, 240, 234, 0.08);
+      --border2: rgba(242, 240, 234, 0.04);
+      --surface: rgba(242, 240, 234, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(242, 240, 234, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(242, 240, 234, 0.02) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrap-wide {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 100px 0 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 32px;
+      background: var(--orange-border);
+    }
+
+    .hero-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 5.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--gray2);
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .06em;
+      padding: 18px 44px;
+      border-radius: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .15s, transform .1s;
+      cursor: pointer;
+      border: none;
+      position: relative;
+    }
+
+    .cta-btn:hover {
+      background: var(--orange2);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-note {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 14px;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .04em;
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      height: 1px;
+      flex: 1;
+      background: var(--border);
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(24px, 3.8vw, 38px);
+      font-weight: 700;
+      line-height: 1.13;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--gray2);
+      margin-bottom: 16px;
+    }
+
+    p strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* QUOTE */
+    .quote {
+      border-left: 2px solid var(--orange);
+      padding: 18px 26px;
+      margin: 32px 0;
+      background: var(--orange-dim);
+      border-radius: 0 2px 2px 0;
+    }
+
+    .quote p {
+      color: var(--white);
+      font-size: 17px;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* AVATAR LIST */
+    .avatar-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .avatar-list li {
+      padding: 12px 0 12px 22px;
+      border-bottom: 1px solid var(--border2);
+      color: var(--gray2);
+      position: relative;
+      font-size: 16px;
+    }
+
+    .avatar-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+    }
+
+    /* COMPARISON */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 32px 0;
+    }
+
+    .cmp-col {
+      background: var(--black);
+    }
+
+    .cmp-head {
+      padding: 14px 22px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cmp-head.bad {
+      color: var(--gray);
+    }
+
+    .cmp-head.good {
+      color: var(--orange);
+    }
+
+    .cmp-item {
+      padding: 13px 22px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border2);
+      color: var(--gray2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cmp-item.good {
+      color: var(--white);
+    }
+
+    .cmp-item:last-child {
+      border-bottom: none;
+    }
+
+    .cmp-item.good::before {
+      content: '✓';
+      color: var(--orange);
+      font-size: 12px;
+    }
+
+    .cmp-item:not(.good)::before {
+      content: '✗';
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    /* DELIVERABLES */
+    .deliverable {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border2);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .deliverable-icon {
+      color: var(--orange);
+      font-size: 13px;
+      min-width: 14px;
+      margin-top: 5px;
+    }
+
+    .deliverable-text {
+      font-size: 15px;
+      color: var(--gray2);
+      line-height: 1.6;
+    }
+
+    .deliverable-text strong {
+      color: var(--white);
+      display: block;
+      margin-bottom: 3px;
+      font-size: 16px;
+    }
+
+    /* STEPS */
+    .step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 32px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      background: var(--orange-dim);
+      border: 1px solid var(--orange-border);
+      width: 36px;
+      height: 36px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-body h3 {
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .step-body p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* PRICE */
+    .price-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 44px 36px;
+      text-align: center;
+      margin: 32px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+
+    .price-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .price-strike {
+      font-size: 17px;
+      color: var(--gray);
+      text-decoration: line-through;
+      margin-bottom: 8px;
+    }
+
+    .price-main {
+      font-family: 'Syne', sans-serif;
+      font-size: 58px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .price-note {
+      font-size: 13px;
+      color: var(--gray2);
+      margin-bottom: 28px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* GUARANTEE */
+    .guarantee {
+      border: 1px solid var(--orange-border);
+      background: var(--orange-dim);
+      border-radius: 2px;
+      padding: 26px 30px;
+      margin: 28px 0;
+    }
+
+    .guarantee-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    /* NICHE GRID */
+    .niche-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 8px;
+      margin: 24px 0;
+    }
+
+    .niche-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--gray2);
+      text-align: center;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .04em;
+      transition: border-color .15s, color .15s;
+    }
+
+    .niche-item:hover {
+      border-color: var(--orange-border);
+      color: var(--white);
+    }
+
+    /* FAQ PILLAR */
+    .faq-item {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 18px 24px;
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface);
+      transition: background .15s;
+      user-select: none;
+    }
+
+    .faq-q:hover {
+      background: rgba(242, 240, 234, 0.05);
+    }
+
+    .faq-q .faq-icon {
+      color: var(--orange);
+      font-size: 18px;
+      transition: transform .2s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease, padding .3s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding: 16px 24px 20px;
+    }
+
+    .faq-a p {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 36px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ═══════════════════════════════════════
+   3C INTERACTIVE SECTION
+═══════════════════════════════════════ */
+
+    .tcc-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* FLOW PANEL */
+    .tcc-panel {
+      margin-bottom: 80px;
+    }
+
+    .tcc-panel:last-child {
+      margin-bottom: 0;
+    }
+
+    .tcc-panel-header {
+      margin-bottom: 36px;
+    }
+
+    .tcc-panel-header h3 {
+      font-size: clamp(20px, 3vw, 28px);
+      margin-bottom: 8px;
+    }
+
+    .tcc-panel-header p {
+      font-size: 15px;
+      margin: 0;
+      max-width: 600px;
+    }
+
+    /* AGENT FLOW */
+    .agent-flow {
+      position: relative;
+    }
+
+    /* Vertical connector line */
+    .agent-flow::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 44px;
+      bottom: 44px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--orange), rgba(217, 79, 30, 0.1));
+      z-index: 0;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .flow-step-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .flow-step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      background: var(--black2);
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: border-color .2s;
+    }
+
+    .flow-step:hover .flow-step-icon {
+      border-color: var(--orange-border);
+    }
+
+    .flow-step-line {
+      width: 1px;
+      flex: 1;
+      min-height: 20px;
+      background: var(--border);
+    }
+
+    .flow-step-body {
+      padding: 8px 0 24px;
+      flex: 1;
+    }
+
+    .flow-agent-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange-dim);
+      border: 1px solid var(--orange-border);
+      border-radius: 2px;
+      padding: 3px 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .flow-step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .flow-step-desc {
+      font-size: 14px;
+      color: var(--gray2);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* OUTPUT PILL */
+    .flow-output {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--gray2);
+    }
+
+    .flow-output::before {
+      content: 'output';
+      padding: 2px 8px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 9px;
+      letter-spacing: .1em;
+      color: var(--gray);
+    }
+
+    /* DATA TAGS */
+    .data-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .data-tag {
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--gray2);
+      background: var(--surface);
+    }
+
+    .data-tag.highlight {
+      border-color: var(--orange-border);
+      color: var(--orange);
+      background: var(--orange-dim);
+    }
+
+    /* FLOW RESULT BOX */
+    .flow-result {
+      margin-top: 32px;
+      padding: 22px 26px;
+      border: 1px solid var(--orange-border);
+      border-radius: 2px;
+      background: var(--orange-dim);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .flow-result-icon {
+      font-size: 22px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .flow-result-text h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .flow-result-text p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* VISUAL DIAGRAM */
+    .flow-diagram {
+      margin: 28px 0;
+      padding: 24px;
+      background: var(--black2);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow-x: auto;
+    }
+
+    .diagram-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .diagram-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .diagram-node {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--gray2);
+      background: var(--surface);
+      white-space: nowrap;
+    }
+
+    .diagram-node.source {
+      border-color: rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .diagram-node.agent {
+      border-color: var(--orange-border);
+      color: var(--orange);
+      background: var(--orange-dim);
+    }
+
+    .diagram-node.output {
+      border-color: rgba(34, 197, 94, 0.3);
+      color: #86efac;
+      background: rgba(34, 197, 94, 0.05);
+    }
+
+    .diagram-arrow {
+      color: var(--gray);
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    /* METRICS ROW */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 36px 0;
+    }
+
+    .metric {
+      background: var(--black);
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .metric-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-num span {
+      color: var(--orange);
+    }
+
+    .metric-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    @media (max-width: 640px) {
+      .tcc-tabs {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .tcc-tab-num {
+        font-size: 28px;
+      }
+
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-row {
+        grid-template-columns: 1fr;
+      }
+
+      .agent-flow::before {
+        left: 18px;
+      }
+
+      .flow-step-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:72px">
+    <div class="wrap">
+      <div class="hero-eyebrow">· Humanizer Ultra</div>
+      <h1 class="hero-title">Em 5 dias você monta um sistema que capta lead, responde no seu lugar e <em>fecha venda de R$1.000 a R$5.000</em> pelo Instagram.</h1>
+      <p class="hero-sub">Sem agência. Sem responder DM na mão. Sem postar todo dia.</p>
+      <a href="https://wa.me/5534997101300?text=Tenho%20interesse%20na%20implementa%C3%A7%C3%A3o" target="_blank" class="cta-btn">Quero começar do zero</a>
+    </div>
+  </section>
+
+  <!-- A REALIDADE -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">A Realidade</div>
+      <h2>Você vende serviço no Instagram e já passou por alguma dessas:</h2>
+
+      <ul class="avatar-list">
+        <li>Responde DM um por um enquanto tenta atender cliente ao mesmo tempo</li>
+        <li>Perde lead toda semana porque demorou a responder e ele foi embora</li>
+        <li>Pagou agência todo mês e o resultado não veio no ritmo do boleto</li>
+        <li>Não sabe qual post vendeu e qual só teve curtida</li>
+        <li>Posta quando dá, sem saber o que tá funcionando</li>
+        <li>Tentou tráfego pago sozinho e só queimou dinheiro</li>
+        <li>Sabe que precisa de automação mas não quer passar semanas aprendendo</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- O CAMINHO -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">O Caminho</div>
+      <h2>Sistema de vendas mudou, você precisa se adaptar ao mercado, quem soluciona rápido ganha.</h2>
+      <p>Vender por R$97 ou R$197 traz um problema claro: você precisa de muito volume de vendas pra ver o dinheiro sobrar. E pra ter volume, você precisa de operação. Fazer isso sem caixa significa trabalhar o dia inteiro apagando incêndio.</p>
+      <p>Sendo bem direto: se você não tem caixa livre pra queimar em tráfego agora, vender barato não é o seu jogo.</p>
+
+      <div class="quote">
+        <p>"Pensa num personal que cobra R$300. Ele precisa correr atrás de 33 alunos pra bater 10 mil reais no mês. Agora, o mesmo profissional cobrando R$1.500 só precisa de 7. A matemática muda completamente, mas o seu esforço não precisa aumentar."</p>
+      </div>
+
+      <p>A real é que existe um público pronto pra pagar de R$1.000 a R$5.000 num serviço sem reclamar do valor. A única regra é: a sua captação precisa ser rápida e o processo tem que passar autoridade. Já vou te mostrar quem é essa galera.</p>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É ISSO -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">Para quem é isso</div>
+      <h2>Qualquer profissional que vende serviço pelo Instagram:</h2>
+
+      <div class="niche-grid">
+        <div class="niche-item">Personal</div>
+        <div class="niche-item">Nutricionista</div>
+        <div class="niche-item">Psicólogo</div>
+        <div class="niche-item">Designer</div>
+        <div class="niche-item">Coach</div>
+        <div class="niche-item">Advogado</div>
+        <div class="niche-item">Arquiteto</div>
+        <div class="niche-item">Engenheiro</div>
+        <div class="niche-item">Terapeuta</div>
+        <div class="niche-item">Fotógrafo</div>
+        <div class="niche-item">Clínicas de estética</div>
+        <div class="niche-item">Odontologia</div>
+      </div>
+
+      <p style="margin-top:24px;">Dentro desse grupo existem três situações:</p>
+      <ul class="avatar-list">
+        <li>Quem tem poucos clientes quer mais.</li>
+        <li>Quem tem agenda cheia quer cobrar mais.</li>
+        <li>Quem tem agenda cheia e ticket alto quer parar de operar tudo na mão.</li>
+      </ul>
+      <p>Nos três casos o problema é o mesmo: falta um sistema rodando quando você não está.</p>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ NÃO PRECISA -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">O que você não precisa</div>
+      <h2>Não precisa saber mexer em IA.<br>Não precisa entender de tráfego.</h2>
+
+      <p>Precisa de um bom serviço, disposição pra seguir o processo e honestidade pra pedir ajuda quando travar.</p>
+      <p>Te prometem resultado com R$50 de tráfego e duas horas por semana. Não é assim. Isso é negócio, não conto de fadas. Mas também não precisa ser complicado do jeito que te fizeram acreditar.</p>
+    </div>
+  </section>
+
+  <!-- O CICLO QUE TRAVA TODO MUNDO -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">O ciclo que trava todo mundo</div>
+      <h2>Você fatura primeiro. Otimiza depois.</h2>
+      
+      <div class="comparison">
+        <div class="cmp-col">
+          <div class="cmp-head bad">O padrão que não funciona</div>
+          <div class="cmp-item">Contrata agência</div>
+          <div class="cmp-item">Espera 30 dias pra começar</div>
+          <div class="cmp-item">Resultado não aparece no ritmo esperado</div>
+          <div class="cmp-item">Paga mais um mês achando que melhora</div>
+          <div class="cmp-item">Desiste ou troca de agência e repete</div>
+        </div>
+        <div class="cmp-col">
+          <div class="cmp-head good">O sistema Anti-Agência</div>
+          <div class="cmp-item good">Sistema no ar em 5 dias</div>
+          <div class="cmp-item good">Primeiros leads qualificados na primeira semana</div>
+          <div class="cmp-item good">Primeiras vendas fechadas pelo robô sem você online</div>
+          <div class="cmp-item good">Dashboard mostrando o que funciona pra você repetir</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A IMPLEMENTAÇÃO -->
+  <section class="tcc-section" id="metodologia">
+    <div class="wrap-wide">
+      <div class="wrap" style="padding:0; margin-bottom:48px;">
+        <div class="section-label">A Implementação</div>
+        <h2>Seu primeiro sistema de vendas automático no Instagram.</h2>
+        <p>Funciona com público frio — sem seguidores, sem lista, sem base prévia.</p>
+      </div>
+
+      <div class="tcc-panel active">
+        <div class="tcc-panel-header">
+          <h3>O método dos 3C</h3>
+          <p>Feito com você, do começo ao fim, em 5 dias.</p>
+        </div>
+
+        <div class="agent-flow">
+          <div class="flow-step">
+            <div class="flow-step-connector">
+              <div class="flow-step-icon">🎯</div>
+              <div class="flow-step-line"></div>
+            </div>
+            <div class="flow-step-body">
+              <div class="flow-agent-badge">Dia 1 · Onboarding</div>
+              <div class="flow-step-title">Mapeamento</div>
+              <p class="flow-step-desc">Mapeio sua voz, seu nicho e seus clientes ideais. O Hermes aprende com isso. Sem essa etapa o resto não funciona.</p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-step-connector">
+              <div class="flow-step-icon">🧠</div>
+              <div class="flow-step-line"></div>
+            </div>
+            <div class="flow-step-body">
+              <div class="flow-agent-badge">Dia 2 · Segundo Cérebro</div>
+              <div class="flow-step-title">Configuração do Claude</div>
+              <p class="flow-step-desc">O Claude é configurado com sua linguagem. Ele escreve post, legenda, copy de anúncio e resposta de DM do seu jeito — não do jeito de IA.</p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-step-connector">
+              <div class="flow-step-icon">🤖</div>
+              <div class="flow-step-line"></div>
+            </div>
+            <div class="flow-step-body">
+              <div class="flow-agent-badge">Dia 3 · O Hermes no ar</div>
+              <div class="flow-step-title">Automação no Meta</div>
+              <p class="flow-step-desc">Ele vai nos seus concorrentes, entende o que tá funcionando no seu nicho, cria o criativo, sobe o anúncio no Meta e já começa a analisar. Você não abre o gerenciador uma vez.</p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-step-connector">
+              <div class="flow-step-icon">💬</div>
+              <div class="flow-step-line"></div>
+            </div>
+            <div class="flow-step-body">
+              <div class="flow-agent-badge">Dia 4 · Manychat integrado</div>
+              <div class="flow-step-title">Automação de DM</div>
+              <p class="flow-step-desc">Lead comenta a keyword. O robô responde em segundos, qualifica e manda a proposta. Funciona de madrugada, no fim de semana, quando você tá em atendimento. Você acorda com o PIX.</p>
+            </div>
+          </div>
+
+          <div class="flow-step">
+            <div class="flow-step-connector">
+              <div class="flow-step-icon">📊</div>
+            </div>
+            <div class="flow-step-body">
+              <div class="flow-agent-badge">Dia 5 · Dashboard conectado</div>
+              <div class="flow-step-title">Análise de Dados</div>
+              <p class="flow-step-desc">Você vê qual hook teve mais alcance, qual post gerou mais DM, qual anúncio tá convertendo. O próximo criativo já nasce melhor porque o anterior foi medido.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow-result">
+          <div class="flow-result-icon">⚡</div>
+          <div class="flow-result-text">
+            <h4>Resultado do Sistema</h4>
+            <p>Seu sistema de vendas operando 24h sem você precisar intervir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">O que você recebe</div>
+      <h2>Não é curso. Não tem 40 horas de aula.</h2>
+      <p style="margin-bottom:28px">É implementação. Feita com você, do começo ao fim, em 5 dias.</p>
+
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Segundo Cérebro com Claude</strong>Treinado com sua voz e seu nicho. Escreve do seu jeito.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Hermes — Agente que opera o marketing</strong>Pesquisa, cria, sobe, analisa e otimiza. Sem você na frente do computador.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Manychat configurado</strong>Fluxo de captação, qualificação e proposta no automático.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Dashboard de criativos</strong>Conectado ao Meta. Você sabe o que funciona — não chuta.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>SOP de operação</strong>Você opera sozinho depois dos 30 dias de suporte. Esse é o objetivo.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Suporte direto por 30 dias</strong>Enquanto o sistema aprende o seu negócio, eu fico junto.</div>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">▸</div>
+        <div class="deliverable-text"><strong>Bônus: 50 prompts de vendas prontos</strong>Pro seu nicho. Copy, anúncio e resposta de objeção em segundos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A JORNADA -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">A Jornada</div>
+      <h2>O que acontece nos próximos 90 dias</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Dias 1 a 5</h3>
+          <p>Implementação completa. Sistema no ar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Dias 5 a 15</h3>
+          <p>Primeiros leads qualificados chegando sem você online.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Dias 15 a 30</h3>
+          <p>De 3 a 6 vendas no ticket de R$1.000 a R$2.000 com R$300 a R$500 de tráfego.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Dias 30 a 90</h3>
+          <p>Reinvestimento, otimização e escala. Meta de R$10.000 a R$20.000 por mês.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O INVESTIMENTO -->
+  <section id="implementar">
+    <div class="wrap">
+      <div class="section-label">O Investimento</div>
+      <h2>O que é necessário</h2>
+
+      <div class="price-box">
+        <div class="price-tag">Tempo Necessário</div>
+        <div class="price-strike">1 a 2 horas/dia nos primeiros 5 dias</div>
+        
+        <p style="font-size:14px;color:var(--gray2);margin-bottom:20px;margin-top:20px;">
+          <strong>Tráfego:</strong> R$300 a R$600 de aporte inicial pra rodar o primeiro ciclo.<br>
+          <strong>Tempo pós-implementação:</strong> Menos de 30 minutos por semana.
+        </p>
+
+        <a href="https://wa.me/5534997101300?text=Tenho%20interesse%20na%20implementa%C3%A7%C3%A3o" target="_blank" class="cta-btn">Quero implementar</a>
+      </div>
+
+      <div class="guarantee">
+        <div class="guarantee-title">Garantia de 30 dias</div>
+        <p style="margin:0;font-size:15px;color:var(--white);">Se o sistema não estiver captando e qualificando leads, continuo trabalhando de graça até funcionar. O risco é meu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM FAZ ISSO COM VOCÊ -->
+  <section>
+    <div class="wrap">
+      <div class="section-label">O Especialista</div>
+      <h2>Meu nome é Jonas Guvito.</h2>
+      
+      <p>Uso o mesmo sistema que vendo. O <strong>@jonasguvito.ai</strong> opera com o Hermes — o Segundo Cérebro escreve, o robô responde, o dashboard decide o próximo criativo.</p>
+      
+      <p>Não vendo o que não testei no meu próprio negócio.</p>
+      
+      <div class="quote">
+        <p>"Desenvolvi o método dos 3C depois de errar bastante tentando automatizar marketing sem estrutura. O que entrego hoje é o que eu queria ter recebido quando comecei."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A ESCOLHA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="section-label" style="justify-content:center;">A Escolha</div>
+      <h2 style="text-align:center;max-width:600px;margin:0 auto 16px">Você pode continuar respondendo DM na mão...</h2>
+      <p style="text-align:center;max-width:540px;margin:0 auto 24px">...esperando agência que não entrega, postando sem saber o que funciona.</p>
+      <p style="text-align:center;max-width:540px;margin:0 auto 36px; color:var(--gray2)">Daqui 90 dias o cenário vai ser o mesmo — ou pior, porque quem implementou agora vai estar mais à frente.</p>
+      
+      <div style="text-align:center">
+        <h3 style="margin-bottom:20px;">Ou me chame no WhatsApp.</h3>
+        <p style="max-width:480px; margin:0 auto 24px; color:var(--white);">Converso com você, mostro como o Hermes funcionaria no seu negócio e você decide se faz sentido. <strong>A primeira venda paga a implementação. O resto fica.</strong></p>
+        <a href="https://wa.me/5534997101300?text=Tenho%20interesse%20na%20implementa%C3%A7%C3%A3o" target="_blank" class="cta-btn">Mandar mensagem agora</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p style="margin:0;color:var(--gray)">© 2025 Jonas Guvito · @jonasguvito.ai</p>
+      <p style="margin-top:8px;font-size:11px;color:#3A3835">Resultados variam conforme dedicação e aplicação. Este conteúdo não é endossado pelo Meta Inc.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

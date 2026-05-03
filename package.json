@@ -1,0 +1,12 @@
+{
+  "name": "hermes3c-landing",
+  "version": "1.0.0",
+  "description": "Landing page Hermes 3C",
+  "scripts": {
+    "dev": "npx serve public -p 3000",
+    "start": "npx serve public -p 3000"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
